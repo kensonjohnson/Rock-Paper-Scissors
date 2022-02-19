@@ -13,9 +13,10 @@ a loser, or that the game tied. */
 
 function playRound(playerChoice) {
 
-
+    //create the computer's choice
     let computerChoice = computerPlay();
 
+    //compare the player's choice to the computer's choice and declare a winner if not a tie
     if (playerChoice == computerChoice) {
         return 'Its a tie! Play again!';
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
@@ -33,29 +34,24 @@ function playRound(playerChoice) {
     }
 
 }
-// set a variable for the player choice.
-let playerSelection = null;
 
-function game() {
+//take in the player's choice and play a round, updating the score if possible
+function game(playerSelection) {
 
-    // run the game  5 times
-    for (let i = 0; i < 5; i++) {
+    results = playRound(playerSelection);
 
-        // ask the player to input a choice and assign that to the players choice variable
-        playerSelection = prompt('Please choose rock, paper, or scissors').toLowerCase();
 
-        //make sure they picked a valid choice, else tell them to try again.
-        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-            message = playRound(playerSelection);
-        } else {
-            message = "Please try again with a valid selection."
-        }
+    //update results on screen
+    document.getElementById("results").innerHTML = results;
 
-        //log to console and then alert player of results
-        console.log(message);
-        alert(message);
-
-    }
 }
 
-game();
+// Create an array that selects all of our buttons on the page
+const buttons = document.querySelectorAll('button');
+
+//attach event listeners to each button
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        game(button.id);
+    });
+});

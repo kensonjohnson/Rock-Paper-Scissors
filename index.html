@@ -14,15 +14,28 @@
     <div class="container">
         <div class="top-container">
             <div class="title-box">Let's play Rock, Paper, Scissors!</div>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-box-text">Your Score:</div>
+                    <div id="player-score" class="score-box-score">0</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-box-text">Comp Score:</div>
+                    <div id="computer-score" class="score-box-score">0</div>
+                </div>
+            </div>
             <div class="game-box">
-                <div class="game-text">First to 5 wins.<br>Please make your selection:</div>
+                <div class="game-text">First to <span style="color: black;">5</span> wins.<br>Please make your selection:</div>
                 <div class="button-container">
                     <button id="rock" class="button">Rock</button>
                     <button id="paper" class="button">Paper</button>
                     <button id="scissors" class="button">Scissors</button>
                 </div>
-                <div class="results-title">Results:</div>
-                <div id="results" class="game-results"></div>
+                <div class="results-title-container">
+                    <div class="results-title">Results: Round </div>
+                    <div id="round-count" class="results-round">0</div>
+                </div>
+                <div id="results" class="game-results">Waiting to start...</div>
             </div>
         </div>
         <div class="footer">Created by <a href="https://kensonjohnson.com">Kenson Johnson</a></div>

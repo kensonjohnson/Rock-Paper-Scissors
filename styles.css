@@ -18,7 +18,7 @@ body {
     background-color: #6B705C;
     height: 50px;
     width: 400px;
-    margin: 50px auto 0;
+    margin: 30px auto 0;
     border-radius: 15px;
     text-align: center;
     vertical-align: middle;
@@ -30,12 +30,45 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.score-container {
+    width: 400px;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-box {
+    display: flex;
+    background-color: #6B705C;
+    border-radius: 15px;
+    height: 50px;
+    width: 180px;
+    justify-content: space-evenly;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.score-box-text {
+    color: #FFE8D6;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 50px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.score-box-score {
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
 .game-box {
     background-color: #6B705C;
     height: 300px;
     width: 400px;
     border-radius: 15px;
-    margin: 50px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,6 +99,19 @@ body {
     height: 50px;
     text-decoration: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.results-title-container {
+    display: flex;
+    flex-direction: row;
 }
 
 .results-title {
@@ -73,6 +119,13 @@ body {
     color: #FFE8D6;
     font-weight: 600;
     font-size: 18px;
+}
+
+.results-round {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 18px;
 }
 
 .game-results {

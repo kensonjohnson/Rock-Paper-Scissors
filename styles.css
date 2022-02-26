@@ -136,6 +136,11 @@ body {
     font-size: 18px;
 }
 
+.reset-button {
+    margin: 30px auto 0;
+    visibility: hidden;
+}
+
 .footer {
     width: auto;
     text-align: center;

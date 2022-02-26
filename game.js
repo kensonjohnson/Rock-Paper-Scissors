@@ -85,10 +85,10 @@ function game(playerSelection) {
     results = playRound(playerSelection);
     updateRound();
     if (playerScore >= 5) {
-        endGame(true);
+        return endGame(true);
     }
     if (computerScore >= 5) {
-        endGame(false);
+        return endGame(false);
     }
 
 
@@ -97,8 +97,30 @@ function game(playerSelection) {
 
 }
 
+
+//this will handle ending the game and announcing a winner
+function endGame(win) {
+
+    buttons.forEach(elem => {
+        elem.disabled = true
+    });
+
+    document.getElementById('reseter').style.visibility = 'visible';
+
+    if (win == true) {
+        document.getElementById("results").innerHTML = "Congratulations! You won!";
+    };
+    if (win == false) {
+        document.getElementById("results").innerHTML = "Oh no! You lost!";
+    };
+
+
+}
+
+
 // Create an array that selects all of our buttons on the page
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('div.button-container button');
+
 
 //attach event listeners to each button
 buttons.forEach((button) => {
@@ -106,3 +128,7 @@ buttons.forEach((button) => {
         game(button.id);
     });
 });
+
+
+//this reloads the page to restart the game
+document.querySelector('#reset').addEventListener('click', () => location.reload());
